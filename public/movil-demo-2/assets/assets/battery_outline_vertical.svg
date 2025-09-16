@@ -1,0 +1,6 @@
+<svg viewBox="0 0 32 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cuerpo principal (vertical) -->
+  <rect x="2" y="8" width="28" height="52" rx="4" stroke="gray" stroke-width="2" fill="none"/>
+  <!-- Terminal (parte superior, en y="2") -->
+  <rect x="10" y="2" width="12" height="6" fill="gray"/>
+</svg>

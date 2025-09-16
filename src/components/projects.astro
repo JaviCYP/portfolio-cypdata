@@ -1,0 +1,379 @@
+---
+import DemoSelector from "../React/BiDemoSelector.tsx";
+import FlutterDemoCarousel from "../React/MovilDemoCarousel.tsx"; 
+import GodotDemoCarousel from "../React/WebDemoCarousel.tsx"; 
+import godotLogo from "../../public/web-demo-1/godot-demo-1.png";
+import CollapsibleSection from "../React/CollapsibleSection.tsx";
+import FeedbackDemo from "../../public/feedback_demo.png";
+import demo1 from "../../public/bi-demos/demo1.png";
+import demo2 from "../../public/bi-demos/demo2.png";
+import demo3 from "../../public/bi-demos/demo3.png";
+import demo4 from "../../public/bi-demos/demo4.png";
+import demo5 from "../../public/bi-demos/demo5.png";
+import demo6 from "../../public/bi-demos/demo6.png";
+
+
+
+const movilDemos = [
+  {
+    title: "Demo Checklist",
+    folder: "/movil-demo-1/index.html",
+    description: "Aplicación para validar listas de verificación técnicas en planta y generar un PDF.",
+  },
+  {
+    title: "Demo Optimización de Rutas Marítimas",
+    folder: "/movil-demo-2/index.html",
+    description: "Proyecto piloto para digitalizar operaciones marítimas de gestión de residuos.",
+  },
+  {
+    title: "Demo Búsqueda de Errores",
+    folder: "/movil-demo-3/index.html",
+    description: "Aplicación para buscar errores de sistema de AGV.",
+  },
+]
+
+const webDemos = [
+  // {
+  //   title: "Demo Edición de tablas en Godot",
+  //   image: godotLogo.src,
+  //   folder: "/web-demo-1/index.html",
+  //   description: "Demo de edición de tablas en Godot.",
+  // },
+  {
+    title: "Feedback Dashboard",
+    image: FeedbackDemo.src,
+    folder: "/web-demo-2/index.html",
+    description: "Esta aplicación nos muestra un dashboard de Feedback a empleados de una empresa.",
+  },
+];
+
+const biDemos = [
+  {
+    title: "Autofactura",
+    image: demo1.src,
+    embedUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiYWU1ODc3MTUtMDgzMy00NzFiLTk4YjgtODlkOGZjNzEyN2FlIiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+  },
+  {
+    title: "Sales Analytics",
+    image: demo5.src,
+    embedUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiYmI5MDJiOWUtM2ZjZS00ZTc5LWE1MTgtMTdiOWY1MDQ3ODYwIiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+  },
+  
+  {
+    title: "Tiempos Taller",
+    image: demo3.src,
+    embedUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiYjFhNzhiYWEtMzBjYS00Y2VmLWIzMDgtODUzOWM3MjdmOWY3IiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+  },
+  {
+    title: "Control Stocks",
+    image: demo4.src,
+    embedUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiNjgxNThkYTctNzFiMy00ZTAxLWE2ZTgtODAxMDdkMDY3ZDU1IiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+  },
+  {
+    title: "Control Almacén",
+    image: demo2.src,
+    embedUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiMTU3Mjc2MzYtZDlkYS00ZmFjLWE3NTUtYmI4OTZlMDg0NzE5IiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+  },
+  {
+    title: "Actividad Overview",
+    image: demo6.src,
+    embedUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiYzAxMmZkNmEtOGRlMi00MDAwLTk5NzUtODY0YmRlMDliNzI2IiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+  },
+];
+---
+
+<section id="projects" class="py-12 border-t border-[#ffffff10] text-[var(--white)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-6xl md:text-7xl font-medium mb-16 text-center">Proyectos</h2>
+
+    <div class="flex justify-center gap-4 sm:gap-10 mb-10 flex-wrap">
+      <button class="project-tab" data-type="bi">Paneles Power BI</button>
+      <button class="project-tab" data-type="web">Aplicaciones Web y Escritorio</button>
+      <button class="project-tab" data-type="movil">Aplicaciones Móvil</button>
+    </div>
+
+    <div class="relative min-h-[1000px]"> <!-- Altura más razonable y responsiva -->
+      <!-- Sección BI -->
+      <div id="bi-section" class="project-section absolute inset-0 flex justify-center items-start opacity-0 invisible transform translate-y-4 w-full">
+        <div class="w-full max-w-[1200px] px-4">
+          <DemoSelector demos={biDemos} client:load />
+        </div>
+      </div>
+
+      <!-- Sección Web -->
+      <div id="web-section" class="project-section absolute inset-0 flex justify-center items-start opacity-0 invisible transform translate-y-4 w-full">
+        <div class="w-full max-w-[1300px] px-4">
+          <GodotDemoCarousel demos={webDemos} client:load />
+        </div>
+      </div>
+
+      <!-- Sección Móvil -->
+      <div id="movil-section" class="project-section absolute inset-0 flex justify-center items-start opacity-0 invisible transform translate-y-4 w-full">
+        <div class="w-full max-w-[1000px] px-4">
+          <FlutterDemoCarousel demos={movilDemos} client:load />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script is:inline>
+  const tabs = document.querySelectorAll(".project-tab");
+  const sections = document.querySelectorAll(".project-section");
+  let activeSection = null;
+
+  function showSection(type) {
+    // Si hay una sección activa, ocultarla con animación
+    if (activeSection) {
+      activeSection.classList.remove("opacity-100", "visible");
+      activeSection.classList.add("opacity-0", "invisible", "translate-y-4");
+    }
+    
+    // Mostrar la nueva sección con animación
+    const newSection = document.getElementById(`${type}-section`);
+    
+    // Pequeño retraso para que la animación sea secuencial
+    setTimeout(() => {
+      newSection.classList.remove("opacity-0", "invisible", "translate-y-4");
+      newSection.classList.add("opacity-100", "visible", "translate-y-0");
+      activeSection = newSection;
+    }, activeSection ? 300 : 0); // Si es la primera vez, no hay retraso
+  }
+
+  tabs.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabs.forEach(b => b.classList.remove("active-tab"));
+      btn.classList.add("active-tab");
+      showSection(btn.dataset.type);
+    });
+  });
+
+  // Mostrar la primera por defecto
+  window.addEventListener("DOMContentLoaded", () => {
+    tabs[0].classList.add("active-tab");
+    showSection(tabs[0].dataset.type);
+  });
+</script>
+
+<style is:global>
+  .phone-frame {
+    width: 390px;
+    height: 744px;
+    border: 16px solid #222;
+    border-radius: 36px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    pointer-events: auto;
+    overscroll-behavior: contain;
+    touch-action: none;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .phone-frame iframe {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    pointer-events: auto;
+    touch-action: auto;
+  }
+
+  @media (max-width: 420px) {
+    .phone-frame {
+      width: 100%;
+      height: 90vh;
+      border: none;
+      border-radius: 0;
+    }
+  }
+  
+  .description-box {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #1f1f1f;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    text-align: center;
+    color: #ccc;
+  }
+  
+  /* Estilos adicionales para secciones desplegables */
+  .collapsible-header {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--white);
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .collapsible-header:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .collapsible-content {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+  
+  /* Personalización del icono + */
+  .collapsible-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease;
+  }
+  
+  .collapsible-open .collapsible-icon {
+    transform: rotate(45deg);
+  }
+
+  .project-tab {
+    @apply px-4 py-2 rounded-lg border border-[#A476FF] text-[#A476FF] text-lg font-medium transition-all duration-300 hover:bg-[#A476FF20];
+  }
+
+  .project-tab.active-tab {
+    @apply bg-[#A476FF] text-white;
+  }
+
+  .project-section {
+    @apply transition-all duration-500 ease-in-out transform;
+  }
+
+  /* Nuevos estilos para la transición */
+  .project-section.opacity-100 {
+    opacity: 1;
+  }
+
+  .project-section.visible {
+    visibility: visible;
+  }
+
+  .project-section.translate-y-0 {
+    transform: translateY(0);
+  }
+</style>
+
+</style>
+<!-- ---
+import { Image } from "astro:assets";
+import demo1 from "../../public/demo1.png";
+import demo2 from "../../public/demo2.png";
+import demo3 from "../../public/demo3.png";
+import demo4 from "../../public/demo4.png";
+import demo5 from "../../public/demo5.png";
+import demo6 from "../../public/demo6.png";
+
+
+
+interface Project {
+  title: string;
+  image: ImageMetadata;
+  preview: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Demo 1",
+    image: demo1,
+    preview: "https://app.powerbi.com/view?r=eyJrIjoiYWU1ODc3MTUtMDgzMy00NzFiLTk4YjgtODlkOGZjNzEyN2FlIiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+
+  },
+  {
+    title: "Demo 2",
+    image: demo2,
+    preview: "https://app.powerbi.com/view?r=eyJrIjoiMTU3Mjc2MzYtZDlkYS00ZmFjLWE3NTUtYmI4OTZlMDg0NzE5IiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+
+  },
+  {
+    title: "Demo 3",
+    image: demo3,
+    preview: "https://app.powerbi.com/view?r=eyJrIjoiYjFhNzhiYWEtMzBjYS00Y2VmLWIzMDgtODUzOWM3MjdmOWY3IiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+
+  },
+  {
+    title: "Demo 4",
+    image: demo4,
+    preview: "https://app.powerbi.com/view?r=eyJrIjoiNjgxNThkYTctNzFiMy00ZTAxLWE2ZTgtODAxMDdkMDY3ZDU1IiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+  },
+  {
+    title: "Demo 5",
+    image: demo5,
+    preview: "https://app.powerbi.com/view?r=eyJrIjoiYmI5MDJiOWUtM2ZjZS00ZTc5LWE1MTgtMTdiOWY1MDQ3ODYwIiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+  },
+  {
+    title: "Demo 6",
+    image: demo6,
+    preview: "https://app.powerbi.com/view?r=eyJrIjoiYzAxMmZkNmEtOGRlMi00MDAwLTk5NzUtODY0YmRlMDliNzI2IiwidCI6IjdkY2U0ZTY5LWE1YTAtNGZiOC1iOGJlLTNlZDVmNTc2Y2RjZSIsImMiOjl9",
+  },
+];
+---
+
+<section
+  id="projects"
+  class="py-12 border-t border-[#ffffff10] text-[var(--white)]"
+>
+  <div class="max-w-5xl mx-auto">
+    
+    <h3 class="text-4xl md:text-5xl font-medium mb-8">Proyectos</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        projects.map((project) => (
+          <div class="group">
+            <a
+              href={project.preview}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block"
+            >
+              <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4 border-[25px] border-[#1f1f1f]">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                 class="w-full aspect-video object-contain transform transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div class="flex items-center px-3">
+                <div class="flex-grow">
+                  <h4 class="text-2xl font-semibold">{project.title}</h4>
+                </div>
+                <div class="flex gap-2 ml-auto">
+                  <a
+                    target="_blank"
+                    href={project.preview}
+                    aria-label="Preview"
+                    class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-7"
+                    >
+                      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+   
+  </div>
+</section> -->

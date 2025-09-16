@@ -1,0 +1,36 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/react": "^4.2.4",
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/vercel": "^8.1.4",
+    "@sendgrid/mail": "^8.1.5",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.3",
+    "astro": "^5.7.4",
+    "firebase": "^11.4.0",
+    "framer-motion": "^12.10.0",
+    "keen-slider": "^6.8.6",
+    "ogl": "^1.0.11",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sharp": "^0.34.0",
+    "swiper": "^11.2.6",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "prettier": "^3.5.2",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}
