@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.2.4",
+    "@astrojs/react": "^4.4.0",
     "@astrojs/tailwind": "^6.0.2",
     "@astrojs/vercel": "^8.1.4",
     "@sendgrid/mail": "^8.1.5",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.3",
-    "astro": "^5.7.4",
+    "astro": "^5.14.3",
     "firebase": "^11.4.0",
     "framer-motion": "^12.10.0",
     "keen-slider": "^6.8.6",
@@ -26,11 +26,25 @@
     "react-dom": "^19.0.0",
     "sharp": "^0.34.0",
     "swiper": "^11.2.6",
+    "tailwindcss": "^3.4.18",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@types/node": "^22.13.9",
     "prettier": "^3.5.2",
     "prettier-plugin-astro": "^0.14.1"
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaviCYP/portfolio-cypdata.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaviCYP/portfolio-cypdata/issues"
+  },
+  "homepage": "https://github.com/JaviCYP/portfolio-cypdata#readme"
 }
